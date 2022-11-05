@@ -1,6 +1,10 @@
+// CALCULADORA 13 SALARIO 
 function calculaSalario() {
+    // VARIAVEIS QUE RETIRA ELEMENTOS DO HTML 
     var valor = document.getElementById("valor").value;
     quantidade = document.getElementById("quantidade").value;
+
+    // CALCULO DA TAXA DO INSS 
     var salario = valor / 12 * quantidade;
     var inss = 0;
     if (salario <= 1212.00) {
@@ -14,6 +18,8 @@ function calculaSalario() {
     }else if (salario >= 7087.23) {
         inss = (salario - 7087.22) * 0.14 + (195.89 + 200.28)
     }
+
+    // CALCULO DE DEPENDENTES
     qtddependente = document.getElementById("dependenteqt").value;
     vxdependente = qtddependente;
     valordependete = 0;
@@ -24,6 +30,8 @@ function calculaSalario() {
     } else if(qtddependente >= 2){
         valordependete = vxdependente*189.59;
     }
+
+    // CALCULO DE % DO IRPF SOBRE O SALARIO COM DESCONTO DO INSS
     var inssfim = salario - inss;
     var valorinss = inssfim - valordependete;
     var irpfaqui = 0;
@@ -38,6 +46,8 @@ function calculaSalario() {
     } else if (valorinss >= 4664.69) {
         irpfaqui = 0.275
     }
+
+    // CALCULO DO IRPF FINAL COM DESCONTO SOBRE A ALIQUOTA
     var vxalqui = valorinss * irpfaqui;
     var inssirpf = vxalqui;
     var desconto = 0;
@@ -59,6 +69,8 @@ function calculaSalario() {
     var parcela2 = resultfimdesc - salario / 2;
     var parcela1 = salario / 2;
     var dinheiro = resultfimdesc;
+
+    // CONVERTE A VARIAVEL PARA O VALOR DA MOEDA REAL
     var dinheiroformatado = new Intl.NumberFormat('pt-BR',{
         style: 'currency',
         currency: 'BRL',
@@ -86,6 +98,8 @@ function calculaSalario() {
         style: 'currency',
         currency: 'BRL',
     }).format(valordependete);
+
+    // VARIAVEIS PARA EXIBIR O RESULTADO NO HTML
     var select = document.getElementById("parcela").value;
     if ( select == 2) {
         text = "1ª: " + dinheiroformatado2 + "" + " 2ª: " + dinheiroformatado3 + ""; /* Primeira parcela */
@@ -99,4 +113,22 @@ function calculaSalario() {
     document.getElementById("resultinss").innerHTML = inssresult;
     document.getElementById("resultirpf").innerHTML = irpfresult;
     document.getElementById("valordependete").innerHTML = dependenteresult;
+
+}
+// BOTAO DE LIMPAR ELEMENTOS DO HTML
+function limpar(){
+    const apagarvalor = document.querySelector('#valor')
+    const apagarmeses = document.querySelector('#quantidade')
+    const apagarparcelas = document.querySelector('#parcela')
+    const apagardependente = document.querySelector('#dependenteqt')
+    const apagarinss = document.querySelector('#resultinss')
+    const apagarirpf = document.querySelector('#resultirpf')
+    const apagartotal = document.querySelector('#result')
+    apagarvalor.value = "";
+    apagarmeses.value = "0";
+    apagarparcelas.value = "0";
+    apagardependente.value = "0";
+    apagarinss.innerHTML = "";
+    apagarirpf.innerHTML = "";
+    apagartotal.innerHTML = "";
 }
