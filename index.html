@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" id="quantidade" value="">
-                            <option selected>Meses Trabalhados</option>
+                            <option value="0" selected>Meses Trabalhados</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -59,14 +59,14 @@
                     </div>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" id="parcela" value="">
-                            <option selected>Quantidade de parcelas</option>
+                            <option value="0" selected>Quantidade de parcelas</option>
                             <option value="1">Parcela unica</option>
                             <option value="2">Duas parcelas</option>
                         </select>
                     </div>
                     <div class="col-md-6">
                         <select class="form-select" aria-label="Default select example" id="dependenteqt" value="">
-                            <option selected>Quantidade dependentes</option>
+                            <option value="0" selected>Quantidade dependentes</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -82,7 +82,8 @@
     </div>
         <div align="center">
             <button id="calcular" onclick="calculaSalario()" class="btn btn-primary" style="background-color: #61059eb4; border-color: #000000b4;">Calcular salário</button>
-        </div>
+          <button onclick="limpar()" class="btn btn-primary" style="background-color: #cc0a0ab4; border-color: #000000b4;">Limpar</button>
+      </div>
         <br>
         <div>
         <table class="table table-bordered" style="width: 75%; height: 90%;">
