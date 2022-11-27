@@ -1,3 +1,23 @@
+
+// BOTAO DE LIMPAR ELEMENTOS DO HTML
+function limpar(){
+    const apagarvalor = document.querySelector('#valor')
+    const apagarmeses = document.querySelector('#quantidade')
+    const apagarparcelas = document.querySelector('#parcela')
+    const apagardependente = document.querySelector('#dependenteqt')
+    const apagarinss = document.querySelector('#resultinss')
+    const apagarirpf = document.querySelector('#resultirpf')
+    const apagartotal = document.querySelector('#result')
+    apagarvalor.value = "";
+    apagarmeses.value = "";
+    apagarparcelas.value = "";
+    apagardependente.value = "";
+    apagarinss.innerHTML = "";
+    apagarirpf.innerHTML = "";
+    apagartotal.innerHTML = "";
+}
+
+
 // CALCULADORA 13 SALARIO 
 function calculaSalario() {
     // VARIAVEIS QUE RETIRA ELEMENTOS DO HTML 
@@ -114,21 +134,4 @@ function calculaSalario() {
     document.getElementById("resultirpf").innerHTML = irpfresult;
     document.getElementById("valordependete").innerHTML = dependenteresult;
 
-}
-// BOTAO DE LIMPAR ELEMENTOS DO HTML
-function limpar(){
-    const apagarvalor = document.querySelector('#valor')
-    const apagarmeses = document.querySelector('#quantidade')
-    const apagarparcelas = document.querySelector('#parcela')
-    const apagardependente = document.querySelector('#dependenteqt')
-    const apagarinss = document.querySelector('#resultinss')
-    const apagarirpf = document.querySelector('#resultirpf')
-    const apagartotal = document.querySelector('#result')
-    apagarvalor.value = "";
-    apagarmeses.value = "";
-    apagarparcelas.value = "";
-    apagardependente.value = "";
-    apagarinss.innerHTML = "";
-    apagarirpf.innerHTML = "";
-    apagartotal.innerHTML = "";
 }
