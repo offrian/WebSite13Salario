@@ -12,9 +12,9 @@ function limpar(){
     apagarmeses.value = "";
     apagarparcelas.value = "";
     apagardependente.value = "";
-    apagarinss.innerHTML = "";
-    apagarirpf.innerHTML = "";
-    apagartotal.innerHTML = "";
+    apagarinss.innerHTML = "0";
+    apagarirpf.innerHTML = "0";
+    apagartotal.innerHTML = "0";
 }
 
 
