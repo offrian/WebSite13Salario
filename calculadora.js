@@ -125,9 +125,9 @@ function limpar(){
     const apagarirpf = document.querySelector('#resultirpf')
     const apagartotal = document.querySelector('#result')
     apagarvalor.value = "";
-    apagarmeses.value = "0";
-    apagarparcelas.value = "0";
-    apagardependente.value = "0";
+    apagarmeses.value = "";
+    apagarparcelas.value = "";
+    apagardependente.value = "";
     apagarinss.innerHTML = "";
     apagarirpf.innerHTML = "";
     apagartotal.innerHTML = "";
